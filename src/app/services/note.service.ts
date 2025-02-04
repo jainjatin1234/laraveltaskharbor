@@ -20,13 +20,16 @@ export class NoteService {
     registerUser(data:any){
       return this.httpRequest.post('https://exampleapp-6.onrender.com/api/register',data)
     }
+    loginUser(data:any){
+      return this.httpRequest.post('http://127.0.0.1:8000/api/login',data)
+    }
 
     deletenotedata(id:any){
       return this.httpRequest.delete('https://exampleapp-6.onrender.com/api/delete-note/'+id)
     }
 
     getoneNote(id:any){
-    return  this.httpRequest.get('https://exampleapp-6.onrender.com/api/getoneNote/'+id)
+    return  this.httpRequest.get('https://exampleapp-6.onrender.com/api/getoneNote/'+id) 
     }
     updateNote(id:any,data:any){
       return this.httpRequest.put('https://exampleapp-6.onrender.com/api/update-note/'+id,data)

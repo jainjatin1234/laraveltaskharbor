@@ -1,0 +1,22 @@
+
+
+<div class="container">
+    <div [innerHTML]="target"></div>
+
+    <div class="card shadow-lg p-4" style="max-width: 500px; margin: 0 auto;">
+        <h3 class="text-center mb-4 text-primary">Sign In</h3>
+        <form (ngSubmit)="loginUser()">
+       
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" [(ngModel)]="login.email">
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter your password" name="password" [(ngModel)]="login.password">
+            </div>
+          
+            <button type="submit" class="btn btn-primary w-100">Sign in</button>
+        </form>
+    </div>
+</div>

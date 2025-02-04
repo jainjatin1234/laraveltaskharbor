@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Register } from './register.model';
 import { FormsModule, NgModel } from '@angular/forms';
 import { NoteService } from '../../services/note.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ import { NoteService } from '../../services/note.service';
 export class RegisterComponent {
   register = new Register();
   target:any='';
-  constructor(private userdata:NoteService){};
+  constructor(private userdata:NoteService,private router:Router){};
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -35,6 +36,7 @@ registerUser(){
 
     if(response.code == 201){
       this.target = '<div class="alert alert-success">Success! '+response.message+'</div>';
+      this.router.navigate(['/login'])
     }
     else{
       this.target = '<div class="alert alert-danger">Error! '+response.message+'</div>'
