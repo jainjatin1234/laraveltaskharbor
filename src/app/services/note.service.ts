@@ -10,26 +10,26 @@ export class NoteService {
 
   
   getnotesfromapi(){
-    return  this.httpRequest.get('http://127.0.0.1:8000/api/getnotes')
+    return  this.httpRequest.get('https://exampleapp-6.onrender.com/api/getnotes')
     }
 
     addNote(data:any){
-      return this.httpRequest.post('http://127.0.0.1:8000/api/add-note',data)
+      return this.httpRequest.post('https://exampleapp-6.onrender.com/api/add-note',data)
     }
 
     registerUser(data:any){
-      return this.httpRequest.post('http://127.0.0.1:8000/api/register',data)
+      return this.httpRequest.post('https://exampleapp-6.onrender.com/api/register',data)
     }
 
     deletenotedata(id:any){
-      return this.httpRequest.delete('http://127.0.0.1:8000/api/delete-note/'+id)
+      return this.httpRequest.delete('https://exampleapp-6.onrender.com/api/delete-note/'+id)
     }
 
     getoneNote(id:any){
-    return  this.httpRequest.get('http://127.0.0.1:8000/api/getoneNote/'+id)
+    return  this.httpRequest.get('https://exampleapp-6.onrender.com/api/getoneNote/'+id)
     }
     updateNote(id:any,data:any){
-      return this.httpRequest.put('http://127.0.0.1:8000/api/update-note/'+id,data)
+      return this.httpRequest.put('https://exampleapp-6.onrender.com/api/update-note/'+id,data)
     }
 
 
