@@ -1,0 +1,17 @@
+<form #noteForm="ngForm" (ngSubmit)="addNote()" class="p-4 bg-light rounded shadow-sm">
+    <div class="mb-3 mt-3">
+      <label for="title" class="form-label text-primary">Title:</label>
+      <input type="text" #notetitle="ngModel" class="form-control form-control-lg border-2" id="title" placeholder="Enter title" name="title"  [(ngModel)]="noteobj.title" required minlength="5">
+      <span *ngIf="notetitle.invalid && notetitle.touched" style="color: red;" >Please enter valid title</span>
+    </div>
+    
+    <div class="mb-3">
+      <label for="body" class="form-label text-primary">Body:</label>
+      <textarea #notebody="ngModel" class="form-control form-control-lg border-2" id="body" placeholder="Enter body content" name="body" rows="5"  [(ngModel)]="noteobj.body" required minlength="50"></textarea>
+      <span *ngIf="notebody.invalid && notetitle.touched" style="color: red;" >Please enter valid body</span>
+
+    </div>
+  
+    <button type="submit" class="btn btn-success btn-lg">Submit</button>
+  </form>
+   

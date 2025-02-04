@@ -1,0 +1,32 @@
+
+
+<div class="d-flex justify-content-end align-items-center m-4">
+    <button
+      class="btn btn-primary px-5 py-2 fs-4 text-white rounded-3 fw-bold hover:bg-danger transition duration-500" routerLink="addnote"
+    
+    >
+      Add Task
+    </button>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <!-- Task Component -->
+            <div class="card" *ngFor="let note of noteData">
+                <div class="card-body" >
+                    <h5 class="card-title">{{note.title}}</h5>
+                    <p class="card-text">{{note.body}}</p>
+                    
+                    <!-- Update and Delete buttons -->
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-warning" routerLink="edit/{{note.id}}" >Update</button>
+                        <button class="btn btn-danger" (click)="deleteData(note.id)" >Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+
+ 
+
