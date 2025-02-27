@@ -36,12 +36,12 @@ registerUser(){
 
     console.log(response)
 
-    if(response.code == 201){
-      this.target = '<div class="alert alert-success">Success! '+response.message+'</div>';
+    if(response){
+      this.target = '<div class="alert alert-success">Rgistration Successfully!</div>';
       this.router.navigate(['/login'])
     }
     else{
-      this.target = '<div class="alert alert-danger">Error! '+response.message+'</div>'
+      this.target = '<div class="alert alert-danger">Error!</div>'
     }
   })
 

@@ -36,7 +36,19 @@ export const routes: Routes = [
         component:LoginComponent
     },
     {
+        path:'register/login',
+        component:LoginComponent
+    },
+    {
         path:'login/register',
         component:RegisterComponent
+    },
+    {
+        path:'notes/register',
+        component:RegisterComponent
+    },
+    {
+        path:'notes/login',
+        component:LoginComponent
     }
 ];
