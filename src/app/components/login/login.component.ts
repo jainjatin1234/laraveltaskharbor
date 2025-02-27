@@ -3,17 +3,20 @@ import { Login } from './login.model';
 import { NoteService } from '../../services/note.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule, HeaderComponent, FooterComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   login = new Login();
   target:any='';
+  token:any;
 
   constructor(private userdata:NoteService,private router:Router){
 
@@ -34,17 +37,18 @@ export class LoginComponent {
   
       console.log(response)
   
-      if(response.code ==201){
+      if(response){
         // this.target = '<div class="alert alert-success">Success! '+response.message+'</div>';
+        this.token = localStorage.setItem('token',response.token)
         alert(response.message)
         this.router.navigate(['/notes'])
+      }else{
+        alert("Invalid Credentials")
       }
-      else if(response.code==400){
-        alert(response.message)
-      }
+        
     })
 
-    console.log('login aapi called')
+    console.log('login aapi called')  
      
   }
 }

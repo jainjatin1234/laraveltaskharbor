@@ -5,6 +5,7 @@ import { EditNoteComponent } from './components/edit-note/edit-note.component';
 import { AddNoteComponent } from './components/add-note/add-note.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
     {
@@ -13,7 +14,9 @@ export const routes: Routes = [
     },
     {
         path:'notes',
-        component:NotesComponent
+        canActivate: [AuthGuard],
+
+        component:NotesComponent,
     },
     {
         path:'notes/edit/:id',
@@ -25,10 +28,15 @@ export const routes: Routes = [
     },
     {
         path:'register',
-        component:RegisterComponent
+        component:RegisterComponent,
+
     },
     {
         path:'login',
         component:LoginComponent
+    },
+    {
+        path:'login/register',
+        component:RegisterComponent
     }
 ];

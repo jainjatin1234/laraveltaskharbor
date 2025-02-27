@@ -1,5 +1,5 @@
 
-
+<app-header></app-header>
     <div class="container">
         <div [innerHTML]="target"></div>
         <div class="card shadow-lg p-4" style="max-width: 500px; margin: 0 auto;">
@@ -7,7 +7,7 @@
             <form (ngSubmit)="registerUser()">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" [(ngModel)]="register.name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" [(ngModel)]="register.username">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
@@ -18,7 +18,9 @@
                     <input type="password" class="form-control" id="pwd" placeholder="Enter your password" name="password" [(ngModel)]="register.password">
                 </div>
               
-                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>  
             </form>
         </div>
     </div>
+
+    <app-footer></app-footer>
